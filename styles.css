@@ -1,0 +1,110 @@
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(120deg, #fddde6, #d1c4e9);
+  margin: 0;
+}
+
+.card-container {
+  perspective: 1500px; /* Needed for 3D flip */
+}
+
+.card {
+  width: 500px;
+  height: 320px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s ease-in-out;
+}
+
+
+.card-front,
+.card-inside {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  text-align: center;
+}
+
+
+.card-front {
+  background: linear-gradient(135deg, #f48fb1, #ce93d8);
+}
+
+.cover-decor {
+  display: flex;
+  gap: 10px;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.card-front h1 {
+  color: #fff;
+  font-size: 2rem;
+  margin: 10px 0;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+}
+
+.front-msg {
+  font-size: 1.1rem;
+  color: #fce4ec;
+}
+
+
+.card-inside {
+  background: #fafafa;
+  transform: rotateY(180deg);
+}
+
+.card-inside h2 {
+  color: #6a1b9a;
+  margin-bottom: 15px;
+}
+
+.card-inside p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.decor-line {
+  margin: 20px 0;
+  font-size: 1.3rem;
+}
+
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: #6a1b9a;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #4a148c;
+}
+
+.card.open {
+  transform: rotateY(180deg);
+}
+
+.card.close {
+  transform: rotateY(0deg);
+}
